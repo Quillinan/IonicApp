@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'Series',
       url: '/series',
       icon: 'film'
+    },
+    {
+      title: 'Posts',
+      url: '/post',
+      icon: 'chatboxes'
     }
   ];
 
