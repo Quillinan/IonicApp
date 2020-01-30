@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SeriesPageRoutingModule } from './series-routing.module';
 
 import { SeriesPage } from './series.page';
+import { PostComponent} from '../components/post/post.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { SeriesPage } from './series.page';
     IonicModule,
     SeriesPageRoutingModule
   ],
-  declarations: [SeriesPage]
+  declarations: [SeriesPage, PostComponent]
 })
 export class SeriesPageModule {}
