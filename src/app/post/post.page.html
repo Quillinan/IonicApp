@@ -13,25 +13,26 @@
 		</ion-card-header>
 	</ion-card>
   <ion-list>
-    <ion-item *ngFor="let reply of replys">
+    <ion-item *ngFor="let reply of replys"> 
+      <ion-button color="warning" *ngIf="reply.spoiler_state"> 
+        <h2>Cuidado Spoiler!</h2> <!-- Utilizei um h2 pois foi a alternativa que achei par "tampar" o spoiler -->
+      </ion-button>
       <ion-label>
         <h2>{{reply.reply_nome}}</h2>
         <p>{{reply.reply_texto}}</p>
         <ion-item>
-        <ion-icon size="large" name="thumbs-up" (click)="like(reply)"
-                  color="{{reply.like_state ? 'primary':'medium' }}">
-        </ion-icon>
-        <p>{{reply.numero_like}}</p>
-        <ion-icon size="large" name="thumbs-down" (click)="deslike(reply)"
-                  color="{{reply.deslike_state ? 'danger':'medium' }}">
-        </ion-icon>
-        <p>{{reply.numero_deslike}}</p>
+          <ion-icon size="large" name="thumbs-up" (click)="like(reply)"
+                    color="{{reply.like_state ? 'primary':'medium' }}">
+          </ion-icon>
+          <p>{{reply.numero_like}}</p>
+          <ion-icon size="large" name="thumbs-down" (click)="dislike(reply)"
+                    color="{{reply.dislike_state ? 'danger':'medium' }}">
+          </ion-icon>
+          <p>{{reply.numero_dislike}}</p>
         </ion-item>
         <p>{{reply.reply_data}}</p>
-        <ion-icon name="alert" (click)="spoiler()"></ion-icon>
+        <ion-icon name="alert" (click)="spoiler(reply)"></ion-icon> <!-- O ícone ativa o aviso de spoiler -->
       </ion-label>
-      <ion-item *ngIf="reply.spoiler_state"> 
-      </ion-item>
     </ion-item>
   </ion-list>
 </ion-content>
